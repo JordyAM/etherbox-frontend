@@ -12,7 +12,7 @@ function getBox(){
 
   fetch(url)
     .then((res) => res.json())
-    ,then((res) => {
+    .then((res) => {
     setBoxData(res);
     })
     .catch(console.error);
