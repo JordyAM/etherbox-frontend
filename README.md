@@ -48,7 +48,7 @@ Or you can simply fork this repo, and the backend repo.
 
 ### `Current Features`
 
-- Users are able to chat with anyone currently using the app
+- Users are able to chat with anyone currently using the app in real-time
 - Users can set their name freely. 
 
 ### `Unsolved Problems`
