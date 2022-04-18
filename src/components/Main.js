@@ -1,25 +1,34 @@
 import React from 'react';
 import { TextField } from '@mui/material';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import { useState, useEffect } from 'react';
-import io from 'socket.io-client';
-
-
+import { io } from 'socket.io-client';
+import 'animate.css';
+import RenderChat from './RenderChat';
 
 function Main(props) {
 
-  const socket = io.connect('http://localhost:8000')
+  const socket = io('http://localhost:8000');
+  socket.connect();
 // https://rocky-peak-12032.herokuapp.com' ||
 
-  const [comment, setComment] = useState({message: '', name:''})
+  const [comment, setComment] = useState({name: '', message:''})
   const [chatLog, setChatLog] = useState([])
-  const [chat, setChat] = useState([])
+  // const [chat, setChat] = useState([])
 
   useEffect(() => {
+    const length = chatLog.length;
+    if(length === 5){
+      removeMessage(chatLog)
+    }
     socket.on('message', ({name,message}) => {
-      setChatLog([...chatLog, {name, message}])
+      setChatLog([...chatLog, {name, message}]) 
     })
+    return () => {
+      socket.disconnect();
+    }
+    
   })
   const onTextChange = e => {
     setComment({...comment, [e.target.name]: e.target.value})
@@ -27,29 +36,28 @@ function Main(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    const socket = io('http://localhost:8000')
+    socket.connect();
     const {name, message} = comment
     socket.emit('message', {name,message})
-    setComment({message: '', name})
+    setComment({name, message: ''});
   }
-  const renderChatLog = () => {
-    return chatLog.map(({name, message}, index) => {
-      return (<div key={index}>
-        <h3 className="chatMessage">{name}: <span>{message}</span></h3>
-      </div>)
-    })
+
+  const removeMessage = (e) => {
+    const toDelete = chatLog[0]
+    const newChatLog = e.filter(element => element!==toDelete);
+    setChatLog(newChatLog);
   }
 
     return (
-      <div className="main-chat" 
-      sx={{display:'flex',
-      }}>
-        <div className="render-chat">
-          <h1>Chat Log</h1>
-          {renderChatLog()}
-        </div>
+      <div className="main-chat" >
+        <div className="render-chat"
+      > 
+        
+    </div>
         <form onSubmit={handleSubmit}>
         <div className="name-field">
-          <TextField 
+          <TextField sx={{pt: 1,pb: 1, mt: 5,}}
           name="name" 
           onChange = {e => onTextChange(e)} 
           value={comment.name}
@@ -58,7 +66,7 @@ function Main(props) {
           />
         </div>
         <div >
-          <TextField 
+          <TextField sx={{pt: 1, pb: 1,}}
           name="message" 
           onChange = {e => onTextChange(e)} 
           value={comment.message}
@@ -66,8 +74,13 @@ function Main(props) {
           label="message"
           required/>
         </div>
-        <Button type='submit' variant = 'contained' endIcon={<SendIcon/>}>Send</Button>
+        <Button  type='submit' variant = 'contained' endIcon={<SendIcon/>}>Send</Button>
       </form>
+      <Typography variant='h4' 
+      sx={{
+        padding: 1,
+        mt: 5,}}>Chat Log</Typography>
+      <RenderChat setChatLog={setChatLog} chatLog={chatLog} />
       </div>
     );
 }
