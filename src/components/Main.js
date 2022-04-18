@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import 'animate.css';
 import RenderChat from './RenderChat';
+import { Box } from '@mui/system';
 
 function Main(props) {
 
@@ -19,7 +20,7 @@ function Main(props) {
 
   useEffect(() => {
     const length = chatLog.length;
-    if(length === 5){
+    if(length === 10){
       removeMessage(chatLog)
     }
     socket.on('message', ({name,message}) => {
@@ -50,11 +51,7 @@ function Main(props) {
   }
 
     return (
-      <div className="main-chat" >
-        <div className="render-chat"
-      > 
-        
-    </div>
+      <Box className="main-chat" >
         <form onSubmit={handleSubmit}>
         <div className="name-field">
           <TextField sx={{pt: 1,pb: 1, mt: 5,}}
@@ -79,9 +76,10 @@ function Main(props) {
       <Typography variant='h4' 
       sx={{
         padding: 1,
-        mt: 5,}}>Chat Log</Typography>
+        mt: 5,}}>
+        Chat Log</Typography>
       <RenderChat setChatLog={setChatLog} chatLog={chatLog} />
-      </div>
+      </Box>
     );
 }
 

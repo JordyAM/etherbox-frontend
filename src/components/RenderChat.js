@@ -1,26 +1,34 @@
 import React, { memo } from 'react';
 import { Typography } from '@mui/material';
+import 'animate.css'
+import { Box } from '@mui/material';
 
 
 function RenderChat(props) {
+  let top
     return props.chatLog.map(({name, message}, index) => {
-      return (<div key={index} 
+      return (<Box key={index} 
       className='animate__animated animate__zoomIn'
+      // sx={{width: '100%'}}
       >
         <Typography 
+        style={{ wordWrap: "break-word"}}
         className="chatMessage"
-        variant='h5'
+        variant='h6'
+        // maxWidth='sm'
         sx={{
           backgroundColor:'#2979ff',
-          padding: 1.5,
-          mt: 4, mb: 4, 
-	        border: 1,
+          pt: 1, pb: 1, pl: 2, pr: 2,
+          my: 4, mb: 4,
           borderRadius: 10,
           wordBreak: "break-word",
-          color:'white'
+          color:'white',
+          position: 'relative',
+          // left: ,
+          // top:
         }}
-        >{name}: <span>{message}</span></Typography>
-      </div>)
+        >{name}: {message}</Typography>
+      </Box>)
     })
 }
 
