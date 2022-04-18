@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# `Description`
+EtherBox is an app that allows you to brain storm with friends and co-wrokers without needing to install an app or register to a site. Use it to form ideas and then close it when you're ready!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## `Example`
 
-## Available Scripts
+enter the name you'd like to use and then your message and it will be passed to anyone currently on the app website.
 
-In the project directory, you can run:
+![2022-04-18 (2)](https://user-images.githubusercontent.com/97875763/163827038-7d64cb06-6245-464c-a578-51fb5939c435.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `Technologies used`
+- MERN stack (Mongoose, Express, React, Node.js)
+- Socket.io (Backend message connection)
+- Material-ui (Design)
+- Animate.css (Message design)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Installation instruction`
 
-### `npm test`
+The app can be found here: https://625d77b7803dea605ea0855a--spectacular-starship-ff91d2.netlify.app/
+And the backend server here: https://rocky-peak-12032.herokuapp.com/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Simply open the backend server first to establish the connection with other people, share the app link with anyone you'd like to chat with and enter a message!
 
-### `npm run build`
+If you'd like to test the source code you'll need these dependencies by using npm install (or i):
+        "@emotion/react": "^11.9.0",
+        "@emotion/styled": "^11.8.1",
+        "@mui/icons-material": "^5.6.1",
+        "@mui/material": "^5.6.1",
+        "animate.css": "^4.1.1",
+        "cra-template": "1.1.3",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-router-dom": "^6.3.0",
+        "react-scripts": "5.0.0",
+        "socket.io-client": "^4.4.1"
+Along with these dependencies for the backend: 
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "mongoose": "^6.2.10",
+        "nodemon": "^2.0.15",
+        "socket.io": "^4.4.1"
+Or you can simply fork this repo and the backend repo.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Current Features`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Users are able to chat with anyone currently using the app
+- Users can set their name freely. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### `Unsolved Problems`
+- Extended chat log
