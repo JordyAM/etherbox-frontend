@@ -64,7 +64,6 @@ export default function PersistentDrawerLeft({children}) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [chat,setChat] = useState([])
-  console.log(chat)
 
   const handleDrawerOpen = () => {
     setOpen(true);

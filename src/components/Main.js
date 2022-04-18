@@ -10,7 +10,7 @@ import { Box } from '@mui/system';
 
 function Main(props) {
 
-  const socket = io('http://localhost:8000');
+  const socket = io('https://rocky-peak-12032.herokuapp.com/');
   socket.connect();
 // https://rocky-peak-12032.herokuapp.com' ||
 
@@ -37,7 +37,7 @@ function Main(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const socket = io('http://localhost:8000')
+    const socket = io('https://rocky-peak-12032.herokuapp.com/')
     socket.connect();
     const {name, message} = comment
     socket.emit('message', {name,message})
