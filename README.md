@@ -22,25 +22,29 @@ And the backend server here: https://rocky-peak-12032.herokuapp.com/
 Simply open the backend server first to establish the connection with other people, share the app link with anyone you'd like to chat with and enter a message!
 
 If you'd like to test the source code you'll need these dependencies by using npm install (or i):
-       - @emotion/react
-       - @emotion/styled
-       - @mui/icons-material
-       - @mui/material
-       - animate.css
-       - cra-template
-       - react
-       - react-dom
-       - react-router-dom
-       - react-scripts
-       - socket.io-client
+
+`npm install   @emotion/react
+              @emotion/styled
+              @mui/icons-material
+              @mui/material
+              animate.css
+              cra-template
+              react
+              react-dom
+              react-router-dom
+              react-scripts
+              socket.io-client`
+              
 Along with these dependencies for the backend: 
-       - cors": "^2.8.5"
-       - dotenv": "^16.0.0"
-       - express": "^4.17.3"
-       - mongoose": "^6.2.10"
-       - nodemon": "^2.0.15"
-       - socket.io": "^4.4.1"
-Or you can simply fork this repo and the backend repo.
+
+`npm install        cors
+        dotenv
+        express
+        mongoose
+        nodemon
+        socket.io`
+        
+Or you can simply fork this repo, and the backend repo.
 
 ### `Current Features`
 
