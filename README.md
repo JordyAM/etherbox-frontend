@@ -16,7 +16,7 @@ enter the name you'd like to use and then your message and it will be passed to 
 
 ### `Installation instruction`
 
-The app can be found here: https://625d77b7803dea605ea0855a--spectacular-starship-ff91d2.netlify.app/
+The app can be found here: https://etherbox.netlify.app/
 And the backend server here: https://rocky-peak-12032.herokuapp.com/
 
 Simply open the backend server first to establish the connection with other people, share the app link with anyone you'd like to chat with and enter a message!
